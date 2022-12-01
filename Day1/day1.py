@@ -13,7 +13,28 @@ for value in values:
     else:
         counting += int(value)
 
-print(most_calories)
 
+# PART 2 CORRECT ⭐️
+
+all_calorie_counts = []
+counting = 0
+
+for value in values:
+    if not value:
+        all_calorie_counts.append(counting)
+        counting = 0
+    else:
+        counting += int(value)
+
+max_count = max(all_calorie_counts)
+all_calorie_counts.remove(max_count)
+
+next_count = max(all_calorie_counts)
+all_calorie_counts.remove(next_count)
+
+final_count = max(all_calorie_counts)
+all_calorie_counts.remove(final_count)
+
+print(max_count+next_count+final_count)
 
 
