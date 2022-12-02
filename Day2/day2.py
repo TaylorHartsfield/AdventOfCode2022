@@ -37,3 +37,45 @@ for game in games:
 
 
 print(total_score)
+
+
+#PART 2 CORRECT ⭐️
+
+"""
+A - Rock
+B - Paper
+C - Scissors
+
+X - lose
+Y - draw
+z - win
+
+Rock - 1pt
+Paper - 2pt
+Scissors - 3pt
+
+LOST - 0pt
+DRAW - 3pt
+WIN - 6pt
+
+"""
+OUTCOME_POINTS = {
+    "A X": 3,
+    "A Y": 4,
+    "A Z": 8,
+    "B X": 1,
+    "B Y": 5,
+    "B Z": 9,
+    "C X": 2,
+    "C Y": 6,
+    "C Z": 7
+}
+
+total_outcome_score = 0
+
+for game in games:
+    total_outcome_score += OUTCOME_POINTS[game]
+
+
+print(total_outcome_score)
+
