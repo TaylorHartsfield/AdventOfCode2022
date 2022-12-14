@@ -14,17 +14,34 @@ stacks = {
     "stack9":["R","P","F","L","W","G","Z"]
     }
 
+# for move in moves:
+#     new_move = move.split(' ')
+#     num = int(new_move[1])
+#     from_stack = new_move[3]
+#     to_stack= new_move[5]
+    
+#     i = 1
+#     while i <= num:
+#         move = stacks[f'stack{from_stack}'].pop()
+#         stacks[f'stack{to_stack}'].append(move)
+#         i+= 1
+
+
+# print(stacks)
+
+#PART 2 CORRECT ⭐️
 for move in moves:
     new_move = move.split(' ')
     num = int(new_move[1])
     from_stack = new_move[3]
     to_stack= new_move[5]
     
-    i = 1
-    while i <= num:
-        move = stacks[f'stack{from_stack}'].pop()
+    i = num
+    print(i*-1)
+    while i > 0:
+        move = stacks[f'stack{from_stack}'].pop(i*-1)
         stacks[f'stack{to_stack}'].append(move)
-        i+= 1
+        i -= 1
 
-print(stacks)
-
+for stack in stacks:
+    print(stacks[stack][-1])
